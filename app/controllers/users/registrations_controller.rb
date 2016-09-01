@@ -9,12 +9,12 @@ before_action :configure_account_update_params, only: [:update]
 
   # POST /resource
   def create
-    #super
+    super
 
-    @user = User.new
-    @user.name = params[:user][:name]
-    @user.email = params[:user][:email]
-    @user.password = params[:user][:password]
+  #  @user = User.new
+  #  @user.name = params[:user][:name]
+  #  @user.email = params[:user][:email]
+  #  @user.password = params[:user][:password]
 
     #if @user.save
       #flash[:notice] = "Welcome to Bloccitoff #{@user.name}!"
@@ -25,7 +25,7 @@ before_action :configure_account_update_params, only: [:update]
       #render :new
     #end
 
-  binding.pry
+  #binding.pry
   end
 
   # GET /resource/edit
@@ -65,9 +65,9 @@ before_action :configure_account_update_params, only: [:update]
   end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+   super(resource)
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

@@ -16,6 +16,7 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'bootstrap-sass'
 gem 'figaro'
+gem 'faker'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'

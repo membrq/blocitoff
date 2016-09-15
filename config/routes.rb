@@ -6,9 +6,9 @@ Rails.application.routes.draw do
     root "items#index", as: :authenticated_root
   end
 
-  resources :users, only: [:show]
-
-  resources :items
+  resources :users, only: [:show] do
+    resources :items, only: [:create]
+  end
 
   root 'welcome#index'
 

@@ -7,22 +7,34 @@
   </div>
 </div>
 
-    <div class="col-md-8">
-      <div class="media">
-        <% avatar_url = @user.avatar_url(64) %>
-        <% if avatar_url %>
-          <div class="media-left">
-            <%= image_tag avatar_url, class: 'media-object' %>
-          </div>
-          <% end %>
-        <div class="media-body">
-          <h2 class="media-heading"><%= @user.name %></h2>
-        </div>
+<div class="col-md-8">
+  <div class="media">
+    <% avatar_url = @user.avatar_url(64) %>
+    <% if avatar_url %>
+      <div class="media-left">
+        <%= image_tag avatar_url, class: 'media-object' %>
       </div>
-    </div>
-
-  <div class="row">
-    <div class="col-md-8">
-      <h2 class="text-center">To-Do Items</h2>
+      <% end %>
+    <div class="media-body">
+      <h2 class="media-heading"><%= @user.name %></h2>
+      <small>
+          <%= pluralize(@user.items.count, 'item') %>
+        </small>
     </div>
   </div>
+</div>
+
+
+<h2>To-Do Items</h2>
+<%= render @user.items %> <br />
+  <div>
+    <% if current_user %>
+      <div class='new-item'>
+        <%= render 'items/form', item: Item.new %>
+      </div>
+    <% end %>
+  </div>
+
+
+
+<%= params %>

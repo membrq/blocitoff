@@ -3,7 +3,7 @@
     <div class="media-body">
       <div class="checkbox">
         <label><input type="checkbox" value=""><%= item.name %></label>
-        <%= link_to "", user_item, method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+        <%= link_to "", user_item_path(item.user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
       </div>
     </div>
   </div>

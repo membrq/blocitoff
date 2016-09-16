@@ -1,6 +1,7 @@
 <% if @item.valid? %>
    $('.js-items').prepend("<%= escape_javascript(render(@item)) %>");
    $('.new-item').html("<%= escape_javascript(render partial: 'items/form', locals: { user: @user, item: @new_item }) %>");
+   $('.js-items-count').html("<%= pluralize(@user.items.count, 'item') %>");
  <% else %>
    $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] %></div>");
    $('.new-item').html("<%= escape_javascript(render partial: 'items/form', locals: { user: @user, item: @item }) %>");

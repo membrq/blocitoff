@@ -28,12 +28,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:user_id])
+    @item = current_user.items.find(params[:id])
   end
 
   def destroy
     @user = User.find(params[:user_id])
-    @item = @user.items.find(item_params)
+    @item = @user.items.find(params[:id])
 
     if @item.destroy
       flash[:notice] = "Item was deleted."

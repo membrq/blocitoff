@@ -27,12 +27,19 @@
   </div>
 </div>
 </div>
+<br />
 
-
-<h2>To-Do Items</h2>
-<div class='js-items'>
-<%= render @user.items %> <br />
+<div class="row">
+  <div class="col-lg-8" "pull-right">
+    <h4>You have seven days to complete each task before it is automatically deleted.</h4>
+  </div>
 </div>
+<br />
+
+<h2>To-Do Items</h2><br />
+  <div class='js-items'>
+    <%= render @user.items %> <br />
+  </div>
   <div>
     <% if current_user %>
       <div class='new-item'>
@@ -40,6 +47,3 @@
       </div>
     <% end %>
   </div>
-
-
-<%= params %>

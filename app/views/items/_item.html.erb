@@ -1,10 +1,10 @@
 <%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
   <div class="media">
     <div class="media-body">
-      <div class="checkbox">
-        <label><input type="checkbox" value=""><%= item.name %></label>
+      <ul>
         <%= link_to "", user_item_path(item.user, item), method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
-      </div>
+        <%= item.name %> (created <%= time_ago_in_words(item.created_at) %> ago)
+      </ul>
     </div>
   </div>
 <% end %>

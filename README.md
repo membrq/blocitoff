@@ -2,10 +2,9 @@
 
 A self-destructing to-do list application with Rake automation.
 
-###Use Case:
-If a user hasn't completed a task within 7 days, it will be automatically deleted by the application.
+Use Case: If a user hasn't completed a task within 7 days, it will be automatically deleted by the application.
 
-###Functionality:
+Functionality:
 * User can sign up for an account with a username, password, and email address
 * User can sign in and out
 * User has a profile page
